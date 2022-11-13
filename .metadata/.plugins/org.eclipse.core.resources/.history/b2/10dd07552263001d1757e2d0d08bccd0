@@ -1,0 +1,34 @@
+package project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import project.Utility.DButil;
+import project.exception.CourseException;
+import project.model.Course;
+
+public class CourseDaoImpl implements CourseDao{
+
+	@Override
+	public String addacourse(Course a) throws CourseException {
+		String s="Not inserted.." ;
+		
+		try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("insert into Admistrator(cid,cname,duration,fee)values(?,?,?,?)");
+		
+			ps.setInt(1, a.getCid());
+			ps.setString(2, a.getCname());
+			ps.setInt(3, a.getFee());
+			ps.setString(4, a.getDuration());
+		
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return s;
+	}
+
+}

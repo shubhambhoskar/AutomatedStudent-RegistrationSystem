@@ -1,0 +1,26 @@
+package project.workflow;
+
+public class Main {
+
+	
+	public static void main(String[] args) {
+		
+		while(true) {
+			System.out.println("Welcome to Student Registration System");
+			System.out.println("-------------------------------------");
+			
+			System.out.println("Press the button according to category");
+			System.out.println("Press 1.");
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+}

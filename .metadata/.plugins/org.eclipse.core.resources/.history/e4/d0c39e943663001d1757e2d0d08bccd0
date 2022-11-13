@@ -1,0 +1,345 @@
+package project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import project.Utility.DButil;
+import project.exception.CourseException;
+import project.exception.StudentException;
+import project.model.Batch;
+import project.model.Course;
+import project.model.Student;
+
+public class CourseDaoImpl implements CourseDao{
+
+	@Override
+	public String addacourse(Course a) throws CourseException {
+	
+		String s="Not inserted.." ;
+		
+		try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("insert into course(cid,cname,fee,duration)values(?,?,?,?)");
+		
+			
+			ps.setInt(1, a.getCid());
+			ps.setString(2, a.getCname());
+			ps.setInt(3, a.getFee());
+			ps.setString(4, a.getDuration());
+			
+			int x=ps.executeUpdate();
+		if(x>0) {
+			 s="Course Inserted";
+		}
+		  
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+
+		return s;
+	}
+
+	@Override
+	public void updatefee(int cid, int fee) throws CourseException {
+		
+	try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("update course set fee=? where cid=?");
+		
+			ps.setInt(1,fee);
+			ps.setInt(2,cid);
+			
+			int x=ps.executeUpdate();
+		
+			if(x>0) {
+				System.out.println(x+" course fee is update");
+			}
+		} catch (Exception e) {
+			System.out.println("No course found");
+		}
+	}
+
+	@Override
+	public void deletecourse(String s) throws CourseException {
+		
+		String a="Not deleted";
+		try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("delete from course where cname=?");
+		
+			ps.setString(1,s);
+			
+			
+			int x=ps.executeUpdate();
+		
+			if(x>0) {
+				System.out.println(x+" course is delete");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+		
+	}
+
+	@Override
+	public void SearchInfoAboutCourse(String s) {
+		String a="java";
+		boolean t=s.equalsIgnoreCase(a);
+		
+		String b="Android";
+		boolean u=s.equalsIgnoreCase(b);
+		
+		String c="JEE";
+		boolean v=s.equalsIgnoreCase(c);
+		
+		String d="PHP";
+		boolean w=s.equalsIgnoreCase(d);
+		
+		String e="Oracle";
+		boolean x=s.equalsIgnoreCase(e);
+		
+		
+		if(t) {
+			System.out.println("Welcome to Java course");
+			System.out.println("Course duration : 3 Month");
+			System.out.println("Course fee : 30000");
+		}else if(u) {
+			System.out.println("Welcome to Android course");
+			System.out.println("Course duration : 2 Month");
+			System.out.println("Course fee : 20000");
+		}else if(v) {
+			System.out.println("Welcome to JEE course");
+			System.out.println("Course duration : 6 Month");
+			System.out.println("Course fee : 60000");
+		}else if(w) {
+			System.out.println("Welcome to PHP course");
+			System.out.println("Course duration : 3 Month");
+			System.out.println("Course fee : 25000");
+		}else if(x) {
+			System.out.println("Welcome to Oracle course");
+			System.out.println("Course duration : 4 Month");
+			System.out.println("Course fee : 40000");
+		}else {
+			System.out.println("Course not found");
+		}
+	}
+
+	@Override
+	public String createabatch(Batch batch) throws CourseException {
+		
+		String message = "Batch Not found";
+		
+		try(Connection conn = DButil.provideConnection()){
+			
+			PreparedStatement ps =  conn.prepareStatement("INSERT INTO batch VALUES (?,?,?,?,?)");
+			ps.setInt(1, batch.getBid() );
+			ps.setString(2, batch.getName());
+			ps.setInt(3, batch.getDuration());
+			ps.setInt(4, batch.getCid());
+			ps.setInt(5, batch.getSeats());
+			
+			int res = ps.executeUpdate();
+			
+			if(res > 0) message = "Batch is"+batch.getName() + " Added to Course ID : "+ batch.getCid();
+			else throw new CourseException("Batch not found");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			throw new CourseException(e.getMessage());
+		}
+
+		return message;
+	}
+
+	@Override
+	public String addstudenttobatchincourse(int roll, int bid, int cid) throws CourseException {
+		
+		String message = "Not inserted";
+		
+		try(Connection conn = DButil.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("select * from student where roll = ?");
+			ps.setInt(1, roll);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				String studentName = rs.getString("name");
+				PreparedStatement ps2 =  conn.prepareStatement("select * from course where cid = ?");
+				ps2.setInt(1, cid);
+				
+				ResultSet rs2 = ps2.executeQuery();
+				
+				if(rs2.next()) {
+					
+					String courseName = rs2.getString("cname");
+					PreparedStatement ps3 = conn.prepareStatement("select bname,seats from batch where bid = ? AND cid = ?");
+					ps3.setInt(1, bid);
+					ps3.setInt(2, cid);
+					
+					ResultSet rs3 = ps3.executeQuery();
+					
+					if(rs3.next()) {
+						
+						String batchName = rs3.getString("bname");
+						int availableSeats = rs3.getInt("seats");
+						
+						if(availableSeats > 0) {
+							
+							availableSeats--;
+							PreparedStatement up = conn.prepareStatement("UPDATE batch SET seats = ? WHERE bid = ?");
+							up.setInt(1, availableSeats);
+							up.setInt(2, bid);
+							
+							int r = up.executeUpdate();
+							
+							PreparedStatement p = conn.prepareStatement("INSERT INTO student_batch VALUES (?,?,?)");
+							p.setInt(1, roll);
+							p.setInt(2, cid);
+							p.setInt(3, bid);
+							
+							int res = p.executeUpdate();
+							
+							if(res > 0) {
+								
+							message="Successfuly Student is added to batch with batch id "+bid +"in course"+cid;
+							}
+							else {
+								throw new CourseException("Batch and Course Not Matching.");
+							}
+		
+						}
+						else {
+							throw new CourseException("No Seats Available.");
+						}
+					}else {
+						throw new CourseException("Batch with Batch ID "+bid+" not Found !");
+					}
+
+				}else {
+					throw new CourseException("Course with course ID "+ cid + " not Found !");
+				}
+				
+			}else {
+				throw new CourseException(" Roll number "+ roll+ " not Found !");
+			}
+			
+		}
+		 catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+		
+		return message;
+	}
+
+	@Override
+	public void updateseatofbatch(int bid, int updateseat) throws CourseException {
+		
+		String message = "Not updated";
+		
+		try(Connection conn = DButil.provideConnection()){
+			
+			PreparedStatement ps =  conn.prepareStatement("UPDATE batch SET seats = ? WHERE bid = ?");
+			ps.setInt(1, updateseat);
+			ps.setInt(2, bid);
+			
+			int x = ps.executeUpdate();
+			
+			if(x>0) System.out.println("Seats are updated of batch id "+bid); 
+
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+	}
+
+	@Override
+	public List<Student> getallstudent() throws StudentException {
+		
+		List<Student> students = new ArrayList<>();
+		
+		try(Connection conn = DButil.provideConnection()){
+			
+			PreparedStatement ps =  conn.prepareStatement("select * from student");
+		
+			ResultSet rs = ps.executeQuery();
+			
+			boolean flag = true;
+			
+			while(rs.next()) {
+				
+				flag = false;
+				int roll = rs.getInt("roll");
+				String name = rs.getString("name");
+				String address= rs.getString("address");
+				String email= rs.getString("email");
+				String pass= rs.getString("password");
+				
+				Student student = new Student(roll,name,address,email,pass);
+				
+				students.add(student);
+			}
+			
+			if(flag) throw new StudentException("Student not found");
+			
+			
+		}catch (SQLException e) {
+			// TODO: handle exception
+			throw new StudentException(e.getMessage());
+		}
+		
+		return students;
+		
+	}
+
+	@Override
+	public List<Course> getallcourse() throws CourseException {
+		
+		List<Course> courses = new ArrayList<>();
+		
+		try(Connection conn = DButil.provideConnection()){
+			
+			PreparedStatement ps =  conn.prepareStatement("select * from course");
+		
+			ResultSet rs = ps.executeQuery();
+			
+			boolean flag = true;
+			
+			while(rs.next()) {
+				
+				flag = false;
+				int roll = rs.getInt("cid");
+				String name = rs.getString("cname");
+				int fee = rs.getInt("fee");
+				String dur = rs.getString("duration");
+				
+				//Course courses = new Student(roll,name,address,email,pass);
+				Course c=new Course(roll, name, fee, dur);
+				courses.add(c);
+			}
+			
+			if(flag) throw new CourseException("Course not found");
+			
+			
+		}catch (SQLException e) {
+			// TODO: handle exception
+			throw new CourseException(e.getMessage());
+		}
+		
+		return courses;
+	}
+
+	
+
+}

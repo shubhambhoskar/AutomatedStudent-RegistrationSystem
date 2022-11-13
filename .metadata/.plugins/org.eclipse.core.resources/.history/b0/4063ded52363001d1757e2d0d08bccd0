@@ -1,0 +1,15 @@
+package project.dao;
+
+import project.exception.CourseException;
+import project.model.Course;
+
+public interface CourseDao {
+
+	
+	public String addacourse(Course a) throws CourseException;
+	
+	
+	
+	
+	
+}

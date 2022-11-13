@@ -1,0 +1,50 @@
+package project.workflow;
+
+import java.util.Scanner;
+
+import project.exception.CourseException;
+import project.usecase.Updatefee;
+import project.usecase.addacourse;
+import project.usecase.deleteacourse;
+
+public class Courseworkflow {
+
+	
+	public static void main(String[] args) {
+		
+		System.out.println("select following option");
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int x=sc.nextInt();
+		
+		if(x==1) {
+			addacourse.main(args);
+		}else if(x==2) {
+			
+				try {
+					Updatefee.main(args);
+				} catch (CourseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		}else if(x==3) {
+			deleteacourse.main(args);
+			
+		}else if(x==4) {
+			
+		}else if(x==5) {
+			
+		}else if(x==6) {
+			
+		}else if(x==7) {
+			
+		}else if(x==8) {
+			
+		}else if(x==9) {
+			
+		}
+		
+	}
+}

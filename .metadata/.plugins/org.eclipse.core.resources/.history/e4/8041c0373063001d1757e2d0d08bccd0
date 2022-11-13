@@ -1,0 +1,47 @@
+package project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import project.Utility.DButil;
+import project.exception.StudentException;
+import project.model.Student;
+
+public class StudentDaoImpl implements StudentDao{
+
+	@Override
+	public void registerstudent(Student s) throws StudentException {
+			
+			try(Connection conn=DButil.provideConnection()){
+				
+				PreparedStatement ps=conn.prepareStatement("insert into student(name,address,email,password)");
+				
+				ps.setString(1, s.getName());
+				ps.setString(2, s.getPassword());
+				ps.setString(3, s.getEmail());
+				ps.setString(4, s.getPassword());
+				
+				int x=ps.executeUpdate();
+				
+				if(x>0) {
+					System.out.println(x+" student registerd Successfully");
+				}else {
+					System.out.println("Not registered");
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("Not Registerd");
+			}
+	}
+
+	@Override
+	public void updatestudentdetails(int roll, String name, String address, String email, String password)
+			throws StudentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

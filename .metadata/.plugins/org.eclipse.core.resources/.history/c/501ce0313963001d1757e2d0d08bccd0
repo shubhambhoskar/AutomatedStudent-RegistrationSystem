@@ -1,0 +1,66 @@
+package project.workflow;
+
+import java.util.Scanner;
+
+import project.exception.CourseException;
+import project.usecase.Searchaboutacourse;
+import project.usecase.Updatefee;
+import project.usecase.addacourse;
+import project.usecase.addstudenttobatch;
+import project.usecase.createabatch;
+import project.usecase.deleteacourse;
+import project.usecase.getallstudent;
+import project.usecase.getallthecoursedetails;
+import project.usecase.updateseatsofbatch;
+
+public class Courseworkflow {
+
+	
+	public static void main(String[] args) {
+		
+		System.out.println("select following option");
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int x=sc.nextInt();
+		
+		if(x==1) {
+			addacourse.main(args);
+		}else if(x==2) {
+			
+				try {
+					Updatefee.main(args);
+				} catch (CourseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		}else if(x==3) {
+			deleteacourse.main(args);
+			
+		}else if(x==4) {
+			Searchaboutacourse.main(args);
+		}else if(x==5) {
+			createabatch.main(args);
+			
+		}else if(x==6) {
+			addstudenttobatch.main(args);
+			
+		}else if(x==7) {
+			updateseatsofbatch.main(args);
+		}else if(x==8) {
+			getallstudent.main(args);
+		}else if(x==9) {
+				try {
+					getallthecoursedetails.main(args);
+				} catch (CourseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		}else {
+			System.out.println("Invlid option");
+		}
+		
+	}
+}

@@ -1,0 +1,21 @@
+package project.dao;
+
+import project.exception.StudentException;
+import project.model.Student;
+
+public class StudentDaoImpl implements StudentDao{
+
+	@Override
+	public void registerstudent(Student s) throws StudentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updatestudentdetails(int roll, String name, String address, String email, String password)
+			throws StudentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

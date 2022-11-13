@@ -1,0 +1,11 @@
+package project.model;
+
+public class Batch {
+
+	private int bid;
+	private String name;
+	private int duration;
+	private int seats;
+	private int cid;
+	
+}

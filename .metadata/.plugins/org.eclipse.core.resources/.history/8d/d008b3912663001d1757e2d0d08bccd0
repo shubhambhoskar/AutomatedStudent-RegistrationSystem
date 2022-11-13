@@ -1,0 +1,87 @@
+package project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import project.Utility.DButil;
+import project.exception.CourseException;
+import project.model.Course;
+
+public class CourseDaoImpl implements CourseDao{
+
+	@Override
+	public String addacourse(Course a) throws CourseException {
+	
+		String s="Not inserted.." ;
+		
+		try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("insert into course(cid,cname,fee,duration)values(?,?,?,?)");
+		
+			
+			ps.setInt(1, a.getCid());
+			ps.setString(2, a.getCname());
+			ps.setInt(3, a.getFee());
+			ps.setString(4, a.getDuration());
+			
+			int x=ps.executeUpdate();
+		if(x>0) {
+			 s="Course Inserted";
+		}
+		  
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+
+		return s;
+	}
+
+	@Override
+	public void updatefee(int cid, int fee) throws CourseException {
+		
+	try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("update course set fee=? where cid=?");
+		
+			ps.setInt(1,fee);
+			ps.setInt(2,cid);
+			
+			int x=ps.executeUpdate();
+		
+			if(x>0) {
+				System.out.println(x+" course fee is update");
+			}
+		} catch (Exception e) {
+			System.out.println("No course found");
+		}
+	}
+
+	@Override
+	public void deletecourse(String s) throws CourseException {
+		
+		String a="Not deleted";
+		try(Connection conn=DButil.provideConnection()) {
+			
+			PreparedStatement ps=conn.prepareStatement("delete from Admistrator where cname=?");
+		
+			ps.setString(1,s);
+			
+			
+			int x=ps.executeUpdate();
+		
+			if(x>0) {
+				System.out.println(x+" course is delete");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new CourseException(e.getMessage());
+		}
+		
+	}
+
+	
+
+}

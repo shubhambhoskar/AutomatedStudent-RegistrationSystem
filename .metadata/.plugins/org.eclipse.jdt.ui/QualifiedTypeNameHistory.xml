@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="project.model.Batch"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="project.dao.CourseDao"/>
+    <fullyQualifiedTypeName name="project.dao.CourseDaoImpl"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="project.model.Course"/>
+    <fullyQualifiedTypeName name="project.exception.CourseException"/>
+    <fullyQualifiedTypeName name="project.exception.StudentException"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="project.Utility.DButil"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="project.model.Student"/>
+    <fullyQualifiedTypeName name="project.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="project.dao.StudentDaoImpl"/>
+    <fullyQualifiedTypeName name="project.usecase.addacourse"/>
+    <fullyQualifiedTypeName name="project.usecase.Updatefee"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="project.usecase.deleteacourse"/>
+    <fullyQualifiedTypeName name="project.usecase.Searchaboutacourse"/>
+    <fullyQualifiedTypeName name="project.usecase.createabatch"/>
+    <fullyQualifiedTypeName name="project.usecase.addstudenttobatch"/>
+    <fullyQualifiedTypeName name="project.usecase.updateseatsofbatch"/>
+    <fullyQualifiedTypeName name="project.usecase.getallthecoursedetails"/>
+    <fullyQualifiedTypeName name="project.usecase.getallstudent"/>
+    <fullyQualifiedTypeName name="project.workflow.Courseworkflow"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="project.usecase.registerstudent"/>
+    <fullyQualifiedTypeName name="project.usecase.Updatestudentrecord"/>
+    <fullyQualifiedTypeName name="project.usecase.getallcourseinstudent"/>
+    <fullyQualifiedTypeName name="project.workflow.StudentWorkflow"/>
+</qualifiedTypeNameHistroy>

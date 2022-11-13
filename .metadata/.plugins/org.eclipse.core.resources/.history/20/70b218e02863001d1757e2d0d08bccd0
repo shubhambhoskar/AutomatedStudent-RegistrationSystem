@@ -1,0 +1,30 @@
+package project.usecase;
+
+import java.util.Scanner;
+
+import project.model.Batch;
+
+public class createabatch {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter batch id :");
+		int c= sc.nextInt();
+		
+		System.out.println("Enter batch name :");
+		String b= sc.next();
+		
+		System.out.println("Enter batch duration :");
+		int d= sc.nextInt();
+		
+		System.out.println("Enter course id :");
+		int cid= sc.nextInt();
+	
+		System.out.println("Enter seats of batch :");
+		int seats= sc.nextInt();
+		
+		Batch batch=new Batch(c,b,d,cid,seats);
+	}
+	
+}

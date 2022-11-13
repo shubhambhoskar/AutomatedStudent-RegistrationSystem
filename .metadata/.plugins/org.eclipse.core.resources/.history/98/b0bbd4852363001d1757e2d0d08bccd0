@@ -1,0 +1,26 @@
+package project.usecase;
+
+import java.util.Scanner;
+
+public class addacourse {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner sc= new Scanner(System.in);
+		
+		System.out.println("Enter course id :");
+		int c= sc.nextInt();
+		
+		System.out.println("Enter course name :");
+		String n= sc.next();
+		
+		System.out.println("Enter course fee :");
+		int f= sc.nextInt();
+		
+		System.out.println("Enter course duration :");
+		String d= sc.next();
+		
+	}
+	
+}

@@ -1,0 +1,16 @@
+package project.dao;
+
+import project.exception.CourseException;
+import project.model.Course;
+
+public interface CourseDao {
+
+	
+	public String addacourse(Course a) throws CourseException;
+	
+	public void updatefee(int cid,int fee)throws CourseException;
+	
+	public void deletecourse(String s)throws CourseException;
+	
+	public void SearchInfoAboutCourse( String s) throws CourseException;
+}

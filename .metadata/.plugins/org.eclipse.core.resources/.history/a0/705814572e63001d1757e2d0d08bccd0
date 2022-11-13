@@ -1,0 +1,12 @@
+package project.usecase;
+
+public class getallstudent {
+
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+	}
+}

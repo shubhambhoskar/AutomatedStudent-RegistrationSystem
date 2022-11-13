@@ -1,0 +1,18 @@
+package project.usecase;
+
+import java.util.Scanner;
+
+public class addstudenttobatch {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in); 
+		
+		System.out.println("Enter roll no :");
+		int c= sc.nextInt();
+		
+		System.out.println("Enter course id :");
+		String n= sc.next();
+		
+	}
+	
+}
