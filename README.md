@@ -30,7 +30,7 @@ Roles for a Student:
         2. To update this details.
         3. Get all the course.
         
-The ER-Diagram is shown below
+The ER-Diagram is shown below :
 
 ![project er diagram](https://user-images.githubusercontent.com/107916214/204328509-5dd037d2-d10d-4c5d-8b7b-65bb296438c6.png)
 
