@@ -6,9 +6,18 @@ import project.dao.StudentDao;
 import project.dao.StudentDaoImpl;
 import project.exception.StudentException;
 import project.model.Student;
-
+/**
+ * 
+ * @author Shubham
+ *This is the used as a usecase of registerstudent method.
+ */
 public class registerstudent {
 
+	/**
+	 * 	
+	 * @param args
+	 * @see Main method to take required parameter to execute the function. 
+	 */
 	public static void main(String[] args) {
 
 		
@@ -34,6 +43,9 @@ public class registerstudent {
 		StudentDao dao=new StudentDaoImpl();
 		
 		try {
+			/**
+			 * Here is the method call.
+			 */
 			dao.registerstudent(s);
 		} catch (StudentException e1) {
 			// TODO Auto-generated catch block

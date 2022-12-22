@@ -5,9 +5,18 @@ import java.util.Scanner;
 import project.dao.StudentDao;
 import project.dao.StudentDaoImpl;
 import project.exception.StudentException;
-
+/**
+ * 
+ * @author Shubham
+ *This is the usecase class of method to updatestudentrecord 
+ */
 public class Updatestudentrecord {
 
+	/**
+	 * 	
+	 * @param args
+	 * @see Main method to take required parameter to execute the function. 
+	 */
 	public static void main(String[] args) {
 		
 		Scanner sc= new Scanner(System.in);
@@ -30,6 +39,9 @@ public class Updatestudentrecord {
 		StudentDao dao=new StudentDaoImpl();
 		
 		try {
+			/**
+			 * Here is the method call.
+			 */
 			dao.updatestudentdetails(roll, n, a, e, p);
 		} catch (StudentException e1) {
 			// TODO Auto-generated catch block

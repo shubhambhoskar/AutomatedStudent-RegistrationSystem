@@ -2,9 +2,18 @@ package project.workflow;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Shubham
+ *This is the main class of the application how the workflow happens
+ */
 public class Main {
 
-	
+	/**
+	 * 	
+	 * @param args
+	 * @see Main method to execute the application. 
+	 */
 	public static void main(String[] args) {
 		
 		while(true) {

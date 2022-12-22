@@ -6,11 +6,21 @@ import project.dao.CourseDao;
 import project.dao.CourseDaoImpl;
 import project.exception.CourseException;
 import project.model.Course;
-
+/**
+ * 
+ * @author Shubham
+ *This class is the usecase of the addcourse methods
+ */
 public class addacourse {
-
+	/**
+	 * 	
+	 * @param args
+	 * @see Main method to take required parameter to execute the function. 
+	 */
 	public static void main(String[] args) {
-		
+		/**
+		 * Here, Taking the details to execute the methods (By passing parameter to method call). 
+		 */
 		
 		Scanner sc= new Scanner(System.in);
 		
@@ -31,6 +41,9 @@ public class addacourse {
 		CourseDao dao= new CourseDaoImpl();
 		
 		try {
+			/**
+			 * Make the function call and gives the output.
+			 */
 			System.out.println(dao.addacourse(a));
 		} catch (CourseException e) {
 			// TODO Auto-generated catch block

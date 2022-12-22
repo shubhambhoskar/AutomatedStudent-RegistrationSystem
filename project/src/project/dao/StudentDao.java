@@ -7,6 +7,7 @@ import project.exception.StudentException;
 import project.model.Course;
 import project.model.Student;
 
+
 public interface StudentDao {
 
 	public void registerstudent(Student s)throws StudentException;
