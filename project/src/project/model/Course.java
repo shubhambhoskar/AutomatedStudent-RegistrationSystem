@@ -1,5 +1,10 @@
 package project.model;
 
+/**
+ * 
+ * @author Shubham
+ *This is the course class. The object of this class is created by admin only.  
+ */
 public class Course {
 
 	private int cid;

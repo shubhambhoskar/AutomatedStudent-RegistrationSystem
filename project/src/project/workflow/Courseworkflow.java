@@ -12,10 +12,18 @@ import project.usecase.deleteacourse;
 import project.usecase.getallstudent;
 import project.usecase.getallthecoursedetails;
 import project.usecase.updateseatsofbatch;
-
+/**
+ * 
+ * @author Shubham
+ *This class represents the method calls by using the numbers from 1 to 9. TO run method of course or admin.
+ */
 public class Courseworkflow {
 
-	
+	/**
+	 * 
+	 * @param args
+	 * @see Execute the method accordingly of course or admin methods
+	 */
 	public static void main(String[] args) {
 		
 		System.out.println("select following option");

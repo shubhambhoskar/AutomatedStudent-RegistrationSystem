@@ -1,5 +1,9 @@
 package project.model;
-
+/**
+ * 
+ * @author Shubham
+ *This is the Batch class here I made the mapping with the course and batch.
+ */
 public class Batch {
 
 	private int bid;

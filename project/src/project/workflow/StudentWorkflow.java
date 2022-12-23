@@ -5,9 +5,17 @@ import java.util.Scanner;
 import project.usecase.Updatestudentrecord;
 import project.usecase.getallcourseinstudent;
 import project.usecase.registerstudent;
-
+/**
+ * 
+ * @author Shubham
+ *This is the studentworkflow class by pressing button to run the method accordingly
+ */
 public class StudentWorkflow {
 
+	/**
+	 * @param args
+	 * @see Runs the student methods accordingly
+	 */
 	public static void main(String[] args) {
 		
 		System.out.println("Please select the option");

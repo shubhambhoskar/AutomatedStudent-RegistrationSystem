@@ -13,8 +13,18 @@ import project.exception.StudentException;
 import project.model.Course;
 import project.model.Student;
 
+/**
+ * 
+ * @author Shubham
+ *@see The class StudentDaoImpl to perform the student methods.
+ */
 public class StudentDaoImpl implements StudentDao{
 
+	/**
+	 * @param  s It will take the student object.
+	 * @throws StudentException
+	 * @see This is the function to add a student to the system .
+	 */
 	@Override
 	public void registerstudent(Student s) throws StudentException {
 			
@@ -42,6 +52,11 @@ public class StudentDaoImpl implements StudentDao{
 			}
 	}
 
+	/**
+	 * @param  It will take parameter to update 
+	 * @throws StudentException
+	 * @see This is the function to update a student record from the system .
+	 */
 	@Override
 	public void updatestudentdetails(int roll, String name, String address, String email, String password)
 			throws StudentException {
@@ -70,6 +85,11 @@ public class StudentDaoImpl implements StudentDao{
 		
 	}
 
+	/**
+     * @return List of course
+     * @throws CourseException
+     * @see This function retuns the list of all the courses present in the system.
+     */
 	@Override
 	public List<Course> getallcourse() throws CourseException {
 List<Course> courses = new ArrayList<>();

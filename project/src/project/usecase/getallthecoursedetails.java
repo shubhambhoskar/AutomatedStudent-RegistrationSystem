@@ -7,10 +7,20 @@ import project.dao.CourseDaoImpl;
 import project.exception.CourseException;
 import project.model.Course;
 
-
+/**
+ * 
+ * @author Shubham
+ *This is the usecase class of the methods getallcourse.
+ *
+ */
 public class getallthecoursedetails {
 
-	
+	/**
+	 * 
+	 * @param args
+	 * @throws CourseException
+	 * @see This method gives us all details of the course. 
+	 */
 public static void main(String[] args) throws CourseException {
 		
 		

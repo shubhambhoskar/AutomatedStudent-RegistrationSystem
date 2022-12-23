@@ -5,9 +5,18 @@ import java.util.Scanner;
 import project.dao.CourseDao;
 import project.dao.CourseDaoImpl;
 import project.exception.CourseException;
-
+/**
+ * 
+ * @author Shubham
+ *THis is usecase of the method updatefee and contains the method call.
+ */
 public class Updatefee {
 
+	/**
+	 * 	
+	 * @param args
+	 * @see Main method to take required parameter to execute the function. 
+	 */
 	public static void main(String[] args) throws CourseException {
 		
 		Scanner sc= new Scanner(System.in);
@@ -21,6 +30,9 @@ public class Updatefee {
 		CourseDao d= new CourseDaoImpl();
 		
 		try {
+			/**
+			 * Here is the method call using input parameter.
+			 */
 			d.updatefee(c, f);
 		} catch (CourseException e) {
 			

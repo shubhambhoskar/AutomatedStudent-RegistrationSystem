@@ -13,9 +13,19 @@ import project.exception.StudentException;
 import project.model.Batch;
 import project.model.Course;
 import project.model.Student;
-
+/**
+ * 
+ * @author Shubham
+ *@see The class CourseDaoImpl to perform the admin methods or course methods
+ */
 public class CourseDaoImpl implements CourseDao{
 
+	/**
+	 * @param  a It will take the course object from admin.
+	 * @throws Course Exception	
+	 * @return The method return the string if course is added successfully
+	 * @see This is the function to add a course to the system and return the message.
+	 */
 	@Override
 	public String addacourse(Course a) throws CourseException {
 	
@@ -45,6 +55,13 @@ public class CourseDaoImpl implements CourseDao{
 		return s;
 	}
 
+	
+	/**
+	 * @param cid 1St argument ,indicate the course id.
+	 * @param fee 2nd argument ,indicate the updated fee vale.
+	 * @throws CourseException
+	 * @see This function is used to update the fee of a particular course. 
+	 */
 	@Override
 	public void updatefee(int cid, int fee) throws CourseException {
 		
@@ -66,6 +83,14 @@ public class CourseDaoImpl implements CourseDao{
 		}
 	}
 
+	
+	/**
+	 * @param s 1st argument (indicate the course name).
+	 * @throws CourseException
+	 * @see To delete the course from the system by passing the course name.
+	 * 
+	 */
+	
 	@Override
 	public void deletecourse(String s) throws CourseException {
 		
@@ -89,6 +114,11 @@ public class CourseDaoImpl implements CourseDao{
 		
 	}
 
+	/**
+	 * @param s This is parameter store the vale that passed  by user i.e course name.
+	 * @throws Course not found 
+	 * @see This functions gives the details of that particular course present in the system.
+	 */
 	@Override
 	public void SearchInfoAboutCourse(String s) {
 		String a="java";
@@ -132,6 +162,13 @@ public class CourseDaoImpl implements CourseDao{
 		}
 	}
 
+	/**
+	 * @param batch 1st argument indicate new batch details.
+	 *  @throws CourseException
+	 *  @return String 
+	 *  @see This fuction is used to create the new batch 
+	 * 
+	 */
 	@Override
 	public String createabatch(Batch batch) throws CourseException {
 		
@@ -159,6 +196,14 @@ public class CourseDaoImpl implements CourseDao{
 		return message;
 	}
 
+	/**
+	 * @param roll 1st argument indicate the student roll
+	 * @param bid  2nd argument indicate the batch id.
+	 * @param cid  3rd argument indicate the course id.
+	 * @throws CourseException
+	 * @see This method add a student to a particular batch in a particular course.
+	 * 
+	 */
 	@Override
 	public String addstudenttobatchincourse(int roll, int bid, int cid) throws CourseException {
 		
@@ -243,6 +288,13 @@ public class CourseDaoImpl implements CourseDao{
 		return message;
 	}
 
+	/**
+	 * @param bid 1st argument indicate the batch id.
+	 * @param updateseat 2nd argument indicate the to update the seat.
+	 * @throws CourseException
+	 * @see This method used to update the seats of the particular batch and gives us the message.
+	 * 
+	 */
 	@Override
 	public void updateseatofbatch(int bid, int updateseat) throws CourseException {
 		
@@ -264,7 +316,11 @@ public class CourseDaoImpl implements CourseDao{
 			throw new CourseException(e.getMessage());
 		}
 	}
-
+    /**
+     * @return List of student
+     * @throws StudentException
+     * @see This function retuns the list of all the student present in the system.
+     */
 	@Override
 	public List<Student> getallstudent() throws StudentException {
 		
@@ -304,6 +360,11 @@ public class CourseDaoImpl implements CourseDao{
 		
 	}
 
+	/**
+     * @return List of course
+     * @throws CourseException
+     * @see This function retuns the list of all the courses present in the system.
+     */
 	@Override
 	public List<Course> getallcourse() throws CourseException {
 		
