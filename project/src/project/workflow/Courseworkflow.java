@@ -22,7 +22,7 @@ public class Courseworkflow {
 	/**
 	 * 
 	 * @param args
-	 * @see Execute the method accordingly of course or admin methods
+	 * @see Execute the method accordingly of course or admin methods(By pressing the button)
 	 */
 	public static void main(String[] args) {
 		
@@ -36,7 +36,8 @@ public class Courseworkflow {
 		System.out.println("Press 7. Update seats of a batch");
 		System.out.println("Press 8. View all the student");
 		System.out.println("Press 9. View all the coursedetails");
-		
+		System.out.println("Press 99. Log out");
+
 		Scanner sc= new Scanner(System.in);
 		
 		int x=sc.nextInt();
@@ -75,8 +76,11 @@ public class Courseworkflow {
 					e.printStackTrace();
 				}
 			
-		}else {
-			System.out.println("Invlid option");
+		}else if(x==99) {
+			return;
+		}
+		else {
+			System.out.println("Invalid option");
 		}
 		
 	}

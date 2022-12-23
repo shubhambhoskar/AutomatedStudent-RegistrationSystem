@@ -2,6 +2,7 @@ package project.usecase;
 
 import java.util.Scanner;
 
+import project.Utility.EmailValidation;
 import project.dao.StudentDao;
 import project.dao.StudentDaoImpl;
 import project.exception.StudentException;
@@ -30,6 +31,11 @@ public class registerstudent {
 		
 		System.out.println("Enter student email :");
 		String e= sc.next();
+		
+		if(!EmailValidation.validateEmail(e)) {
+		System.out.println("Invalid email");
+		return;
+		}
 		
 		System.out.println("Enter student password :");
 		String p= sc.next();
