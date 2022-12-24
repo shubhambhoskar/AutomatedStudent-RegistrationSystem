@@ -51,7 +51,7 @@ If user provides wrong input, the appropriate error message will appear
 #### Additional things :
 ```
 1. Email validation used
-2. Written the ducumentation
+2. Written the documentation
 ```
 #### Application preview :
 ![SB101_ProjectChanges - Spring Tool Suite 4 24-12-2022 18_46_44](https://user-images.githubusercontent.com/107916214/209437920-71ec864d-aee2-49e3-8dfe-b12459e69a58.png)
