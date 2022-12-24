@@ -1,5 +1,4 @@
 # Automated Student-RegistrationSystem
-(This is project SB101 .....)
 
 ### Problem Description:
 <p>In an Educational Institute, every year technology training is conducted during the summer and winter seasons. Students are enrolled in different courses under different technology tracks like- Android, Java, JEE, PHP, Oracle, etc. This automated application help Institute to enroll students efficiently, create batches under a course, and allocates the students in a batch. </p>
@@ -45,6 +44,9 @@ Admin Password-123
 1. Java
 2. Mysql
 ```
+#### Text-stack used :
+
+
 #### Explaination video link :
  <h3 align="center"><a href="https://drive.google.com/file/d/1IVw4nsf4rUXbDA4NTRNb65sH2vHRnImH/view?usp=share_link"><strong>Want to see live Explination »</strong></a></h3>
 
@@ -53,5 +55,9 @@ Admin Password-123
 ![project er diagram](https://user-images.githubusercontent.com/107916214/204328509-5dd037d2-d10d-4c5d-8b7b-65bb296438c6.png)
 
 
-
+### Feedback :
+ <h3 align="left"><a href="https://www.linkedin.com/in/shubham-bhoskar-0a04a1169/"><strong>LinkedIn</strong></a></h3>
+ 
+ ## Contributor :
+ ## Shubham Bhoskar
 
