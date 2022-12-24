@@ -27,6 +27,11 @@ Students
 2. To update these details
 3. Get all the courses
 ```
+#### Admin Credentials :
+```
+Admin username- admin
+Admin Password-123
+```
 #### MySql tables :
 ```
 1. Course
@@ -34,16 +39,17 @@ Students
 3. Student
 4. Student_batch
 ```
-#### Admin Credentials :
-```
-Admin username- admin
-Admin Password-123
-```
 #### Text-stack used :
 ```
 1. Java
 2. Mysql
 ```
+#### Exception handling :
+```
+If user provides wrong input, the appropriate error message will appear
+```
+#### Application preview :
+![SB101_ProjectChanges - Spring Tool Suite 4 24-12-2022 18_46_44](https://user-images.githubusercontent.com/107916214/209437920-71ec864d-aee2-49e3-8dfe-b12459e69a58.png)
 
 #### Explaination video link :
  <h3 align="center"><a href="https://drive.google.com/file/d/1IVw4nsf4rUXbDA4NTRNb65sH2vHRnImH/view?usp=share_link"><strong>Want to see live Explination »</strong></a></h3>
@@ -58,4 +64,5 @@ Admin Password-123
  
  ## Contributor :
  ## Shubham Bhoskar
+
 
