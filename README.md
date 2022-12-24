@@ -44,8 +44,6 @@ Admin Password-123
 1. Java
 2. Mysql
 ```
-#### Text-stack used :
-
 
 #### Explaination video link :
  <h3 align="center"><a href="https://drive.google.com/file/d/1IVw4nsf4rUXbDA4NTRNb65sH2vHRnImH/view?usp=share_link"><strong>Want to see live Explination »</strong></a></h3>
