@@ -40,6 +40,13 @@ Students
 Admin username- admin
 Admin Password-123
 ```
+#### Text-stack used :
+```
+1. Java
+2. Mysql
+```
+#### Explaination video link :
+ <h3 align="center"><a href="https://drive.google.com/file/d/1IVw4nsf4rUXbDA4NTRNb65sH2vHRnImH/view?usp=share_link"><strong>Want to see live Explination »</strong></a></h3>
 
 <h5>The ER-Diagram is shown below :</h5>
 
